@@ -10,7 +10,7 @@ class RipplePage extends StatefulWidget {
 class _RipplePageState extends State<RipplePage> {
   int avoidedCigarettes = 0; // Counter for avoided cigarettes
   double moneySaved = 0.0; // Total money saved
-  final double costPerCigarette = 0.5; // Cost of a single cigarette
+  final double costPerCigarette = 44; // Cost of a single cigarette
   final TextEditingController reportController = TextEditingController();
 
   void _incrementCounter() {
@@ -43,21 +43,18 @@ class _RipplePageState extends State<RipplePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Ripple Effect"),
-        backgroundColor: Colors.deepPurple,
-      ),
+      backgroundColor: Theme.of(context).colorScheme.tertiary,
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               "Track Your Progress",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Colors.deepPurple,
+                color: Theme.of(context).colorScheme.inversePrimary,
               ),
             ),
             const SizedBox(height: 10),
@@ -78,7 +75,7 @@ class _RipplePageState extends State<RipplePage> {
                           style: TextStyle(fontSize: 18),
                         ),
                         Text(
-                          "$avoidedCigarettes",
+                          "₹ avoidedCigarettes",
                           style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -96,7 +93,7 @@ class _RipplePageState extends State<RipplePage> {
                           style: TextStyle(fontSize: 18),
                         ),
                         Text(
-                          "\$${moneySaved.toStringAsFixed(2)}",
+                          "\₹ ${moneySaved.toStringAsFixed(2)}",
                           style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -109,7 +106,8 @@ class _RipplePageState extends State<RipplePage> {
                     ElevatedButton(
                       onPressed: _incrementCounter,
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.deepPurple,
+                        backgroundColor:
+                            Theme.of(context).colorScheme.inversePrimary,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12.0),
                         ),
@@ -124,12 +122,12 @@ class _RipplePageState extends State<RipplePage> {
               ),
             ),
             const SizedBox(height: 20),
-            const Text(
+            Text(
               "Report Drug Activity",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Colors.deepPurple,
+                color: Theme.of(context).colorScheme.inversePrimary,
               ),
             ),
             const SizedBox(height: 10),
@@ -152,7 +150,7 @@ class _RipplePageState extends State<RipplePage> {
             ElevatedButton(
               onPressed: _submitReport,
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.deepPurple,
+                backgroundColor: Theme.of(context).colorScheme.inversePrimary,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12.0),
                 ),
